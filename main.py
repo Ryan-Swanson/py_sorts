@@ -24,6 +24,21 @@ def selection_sort(sort_me):
           min_index = index
     sort_me[item], sort_me[min_index] = sort_me[min_index], sort_me[item]
 
+def insertion_sort(sort_me, length):
+  if length <= 1:
+    return
+  
+  insertion_sort(sort_me,length-1)
+  last = sort_me[length-1]
+  j = length - 2
+  while (j >= 0 and sort_me[j]>last):
+    sort_me[j+1] = sort_me[j]
+    j -= 1
+  sort_me[j+1] = last
+  
+ 
+
+
 test_list = random_list(20)
 print("Original list: \n", test_list)
 
@@ -32,3 +47,6 @@ print("Selection Sort: \n", test_list)
 
 test_list = random_list(25)
 print("Original list(insertion sort): \n", test_list)
+
+insertion_sort(test_list,len(test_list))
+print("Insertion sort: \n", test_list)
