@@ -37,7 +37,7 @@ def insertion_sort(sort_me, length):
     j -= 1
   sort_me[j+1] = last
 
-# Bubble Swap
+# Bubble Sort
 def bubble_sort(sort_me):
   for item in sort_me:
     for index in range(len(sort_me)-1):
