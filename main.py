@@ -11,7 +11,7 @@ def random_list(quantity: int) -> int:
     rand_list = []
 
     for item in range(0, quantity):
-        rand_list.append(randint(0, quantity))
+        rand_list.append(randint(0, quantity*2))
     return rand_list
 
 # Selection Sort
@@ -24,6 +24,7 @@ def selection_sort(sort_me):
           min_index = index
     sort_me[item], sort_me[min_index] = sort_me[min_index], sort_me[item]
 
+# Insertion Sort
 def insertion_sort(sort_me, length):
   if length <= 1:
     return
@@ -35,8 +36,15 @@ def insertion_sort(sort_me, length):
     sort_me[j+1] = sort_me[j]
     j -= 1
   sort_me[j+1] = last
+
+# Bubble Swap
+def bubble_sort(sort_me):
+  for item in sort_me:
+    for index in range(len(sort_me)-1):
+      if sort_me[index] > sort_me[index+1]:
+        sort_me[index], sort_me[index+1] =sort_me[index+1], sort_me[index]  
   
- 
+
 
 
 test_list = random_list(20)
@@ -50,3 +58,10 @@ print("Original list(insertion sort): \n", test_list)
 
 insertion_sort(test_list,len(test_list))
 print("Insertion sort: \n", test_list)
+
+test_list = random_list(20)
+print("Original list(Bubble sort): \n", test_list)
+
+bubble_sort(test_list)
+print("Bubble sort: \n", test_list)
+
